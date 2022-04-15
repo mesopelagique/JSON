@@ -1,0 +1,1605 @@
+{
+	"info": {
+		"version": 7,
+		"target": [
+			"iOS",
+			"android"
+		],
+		"ideVersion": "1960",
+		"ideBuildVersion": "278257",
+		"componentBuild": ""
+	},
+	"product": {
+		"name": "My App 4",
+		"version": "1.0",
+		"copyright": "©2022 My Company All rights reserved",
+		"bundleIdentifier": "com.myCompany.My-App"
+	},
+	"organization": {
+		"name": "My Company",
+		"teamId": "37UG5W39Z2",
+		"id": "com.myCompany"
+	},
+	"developer": {
+		"name": "emarchand",
+		"id": ""
+	},
+	"server": {
+		"urls": {
+			"production": ""
+		}
+	},
+	"main": {
+		"navigationTitle": "My App",
+		"navigationType": "tabbar",
+		"order": [
+			"7",
+			"5",
+			"13",
+			"6",
+			"10",
+			"19",
+			"1",
+			"20"
+		]
+	},
+	"dataSource": {
+		"source": "server",
+		"doNotGenerateDataAtEachBuild": true,
+		"doNotExportImages": true
+	},
+	"ui": {
+		"navigationTransition": "PresentSlideSegue",
+		"dominantColor": "rgb(0,75,145)"
+	},
+	"dataModel": {
+		"7": {
+			"": {
+				"name": "Service",
+				"label": "Service",
+				"shortLabel": "Service",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"manager": {
+				"kind": "relatedEntity",
+				"relatedDataClass": "Employes",
+				"relatedTableNumber": 6,
+				"inverseName": "serviceManaged",
+				"1": {
+					"name": "ID",
+					"kind": "storage",
+					"fieldType": 9,
+					"valueType": "number",
+					"label": "ID",
+					"shortLabel": "ID",
+					"type": 4,
+					"fieldNumber": 1
+				},
+				"2": {
+					"name": "Name",
+					"kind": "storage",
+					"fieldType": 2,
+					"valueType": "string",
+					"label": "Name",
+					"shortLabel": "Name",
+					"type": 10,
+					"fieldNumber": 2
+				},
+				"3": {
+					"name": "ServiceID",
+					"kind": "storage",
+					"fieldType": 9,
+					"valueType": "number",
+					"label": "Service id",
+					"shortLabel": "Service id",
+					"type": 4,
+					"fieldNumber": 3
+				},
+				"5": {
+					"name": "Avatar",
+					"kind": "storage",
+					"fieldType": 3,
+					"valueType": "image",
+					"label": "Avatar",
+					"shortLabel": "Avatar",
+					"type": 12,
+					"fieldNumber": 5
+				},
+				"7": {
+					"name": "Gender",
+					"kind": "storage",
+					"fieldType": 0,
+					"valueType": "string",
+					"label": "Gender",
+					"shortLabel": "Gender",
+					"type": 10,
+					"fieldNumber": 7
+				},
+				"manager": {
+					"kind": "relatedEntity",
+					"relatedDataClass": "Employes",
+					"inverseName": "serviceManaged",
+					"relatedTableNumber": 6,
+					"5": {
+						"name": "Avatar",
+						"kind": "storage",
+						"fieldType": 3,
+						"path": "manager.Avatar",
+						"label": "Avatar",
+						"shortLabel": "Avatar",
+						"valueType": "image",
+						"type": 12,
+						"fieldNumber": 5
+					}
+				}
+			}
+		},
+		"5": {
+			"": {
+				"name": "ALL_TYPES",
+				"label": "All Types",
+				"shortLabel": "All Types",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"aka_identifiant": {
+				"kind": "alias",
+				"fieldType": 9,
+				"path": "ID",
+				"label": "Aka Identifiant",
+				"shortLabel": "Aka Identifiant"
+			},
+			"aka_objet": {
+				"kind": "alias",
+				"fieldType": 38,
+				"path": "objectField",
+				"label": "Aka Objet",
+				"shortLabel": "Aka Objet"
+			},
+			"2": {
+				"name": "Alpha Field",
+				"kind": "storage",
+				"fieldType": 0,
+				"label": "Alpha Field",
+				"shortLabel": "Alpha Field",
+				"valueType": "string",
+				"type": 10
+			},
+			"6": {
+				"name": "Boolean field",
+				"kind": "storage",
+				"fieldType": 6,
+				"label": "Boolean Field",
+				"shortLabel": "Boolean Field",
+				"valueType": "bool",
+				"type": 1
+			},
+			"calc_alpha": {
+				"kind": "calculated",
+				"name": "calc_alpha",
+				"label": "Calc Alpha",
+				"shortLabel": "Calc Alpha",
+				"fieldType": 2,
+				"valueType": "string",
+				"computed": true,
+				"type": -3
+			},
+			"calc_booléen": {
+				"kind": "calculated",
+				"name": "calc_booléen",
+				"label": "calc_booléen",
+				"shortLabel": "calc_booléen",
+				"fieldType": 6,
+				"valueType": "bool",
+				"computed": true,
+				"type": -3
+			},
+			"calc_date": {
+				"kind": "calculated",
+				"name": "calc_date",
+				"label": "Calc Date",
+				"shortLabel": "Calc Date",
+				"fieldType": 4,
+				"valueType": "date",
+				"computed": true,
+				"type": -3
+			},
+			"calc_entier": {
+				"kind": "calculated",
+				"name": "calc_entier",
+				"label": "Calc Entier",
+				"shortLabel": "Calc Entier",
+				"fieldType": 9,
+				"valueType": "number",
+				"computed": true,
+				"type": -3
+			},
+			"calc_heure": {
+				"kind": "calculated",
+				"name": "calc_heure",
+				"label": "Calc Heure",
+				"shortLabel": "Calc Heure",
+				"fieldType": 9,
+				"valueType": "number",
+				"computed": true,
+				"type": -3
+			},
+			"calc_image": {
+				"kind": "calculated",
+				"name": "calc_image",
+				"label": "Calc Image",
+				"shortLabel": "Calc Image",
+				"fieldType": 3,
+				"valueType": "image",
+				"computed": true,
+				"type": -3
+			},
+			"calc_objet": {
+				"kind": "calculated",
+				"name": "calc_objet",
+				"label": "Calc Objet",
+				"shortLabel": "Calc Objet",
+				"fieldType": 38,
+				"valueType": "object",
+				"computed": true,
+				"type": -3
+			},
+			"calc_réel": {
+				"kind": "calculated",
+				"name": "calc_réel",
+				"label": "calc_réel",
+				"shortLabel": "calc_réel",
+				"fieldType": 1,
+				"valueType": "number",
+				"computed": true,
+				"type": -3
+			},
+			"calc_text": {
+				"kind": "calculated",
+				"name": "calc_text",
+				"label": "Calc Text",
+				"shortLabel": "Calc Text",
+				"fieldType": 2,
+				"valueType": "string",
+				"computed": true,
+				"type": -3
+			},
+			"4": {
+				"name": "Date field",
+				"kind": "storage",
+				"fieldType": 4,
+				"label": "Date Field",
+				"shortLabel": "Date Field",
+				"valueType": "date",
+				"type": 8
+			},
+			"11": {
+				"name": "Float field",
+				"kind": "storage",
+				"fieldType": 1,
+				"label": "Float Field",
+				"shortLabel": "Float Field",
+				"valueType": "number",
+				"type": 6
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4
+			},
+			"9": {
+				"name": "Integer 64 bits field",
+				"kind": "storage",
+				"fieldType": 25,
+				"label": "Integer 64 Bits Field",
+				"shortLabel": "Integer 64 Bits Field",
+				"valueType": "number",
+				"type": 5
+			},
+			"7": {
+				"name": "Integer field",
+				"kind": "storage",
+				"fieldType": 8,
+				"label": "Integer Field",
+				"shortLabel": "Integer Field",
+				"valueType": "number",
+				"type": 3
+			},
+			"8": {
+				"name": "Long Integer field",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Long Integer Field",
+				"shortLabel": "Long Integer Field",
+				"valueType": "number",
+				"type": 4
+			},
+			"14": {
+				"name": "Object field",
+				"kind": "storage",
+				"fieldType": 38,
+				"label": "Object Field",
+				"shortLabel": "Object Field",
+				"valueType": "object",
+				"type": 21
+			},
+			"15": {
+				"name": "objectField",
+				"kind": "storage",
+				"fieldType": 38,
+				"label": "Object Field",
+				"shortLabel": "Object Field",
+				"valueType": "object",
+				"type": 21
+			},
+			"13": {
+				"name": "Picture field",
+				"kind": "storage",
+				"fieldType": 3,
+				"label": "Picture Field",
+				"shortLabel": "Picture Field",
+				"valueType": "image",
+				"type": 12
+			},
+			"10": {
+				"name": "Real field",
+				"kind": "storage",
+				"fieldType": 1,
+				"label": "Real Field",
+				"shortLabel": "Real Field",
+				"valueType": "number",
+				"type": 6
+			},
+			"3": {
+				"name": "Text field",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Text Field",
+				"shortLabel": "Text Field",
+				"valueType": "string",
+				"type": 10
+			},
+			"5": {
+				"name": "Time field",
+				"kind": "storage",
+				"fieldType": 11,
+				"label": "Time Field",
+				"shortLabel": "Time Field",
+				"valueType": "number",
+				"type": 9
+			}
+		},
+		"13": {
+			"": {
+				"name": "Themes",
+				"label": "Themes",
+				"shortLabel": "Themes",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"commands": {
+				"kind": "relatedEntities",
+				"label": "List of Commands",
+				"shortLabel": "Commands",
+				"relatedEntities": "Commands",
+				"inverseName": "theme",
+				"relatedDataClass": "Commands",
+				"relatedTableNumber": 1,
+				"isToMany": true
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4
+			},
+			"2": {
+				"name": "Name",
+				"kind": "storage",
+				"fieldType": 0,
+				"label": "Name",
+				"shortLabel": "Name",
+				"valueType": "string",
+				"type": 10
+			},
+			"3": {
+				"name": "Picture",
+				"kind": "storage",
+				"fieldType": 3,
+				"label": "Picture",
+				"shortLabel": "Picture",
+				"valueType": "image",
+				"type": 12
+			}
+		},
+		"6": {
+			"": {
+				"name": "Employes",
+				"label": "Employes",
+				"shortLabel": "Employes",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"5": {
+				"name": "Avatar",
+				"kind": "storage",
+				"fieldType": 3,
+				"label": "Avatar",
+				"shortLabel": "Avatar",
+				"valueType": "image",
+				"type": 12
+			},
+			"employee_return": {
+				"kind": "relatedEntities",
+				"label": "List of Employee Return",
+				"shortLabel": "Employee Return",
+				"relatedEntities": "EmployesOffices",
+				"inverseName": "employee",
+				"relatedDataClass": "EmployesOffices",
+				"relatedTableNumber": 20,
+				"isToMany": true
+			},
+			"7": {
+				"name": "Gender",
+				"kind": "storage",
+				"fieldType": 0,
+				"label": "Gender",
+				"shortLabel": "Gender",
+				"valueType": "string",
+				"type": 10
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4
+			},
+			"manager": {
+				"kind": "relatedEntity",
+				"label": "Manager",
+				"shortLabel": "Manager",
+				"relatedDataClass": "Employes",
+				"inverseName": "subordinates",
+				"relatedTableNumber": 6,
+				"1": {
+					"name": "ID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "ID",
+					"shortLabel": "ID",
+					"valueType": "number",
+					"type": 4,
+					"path": "ID"
+				},
+				"2": {
+					"name": "Name",
+					"kind": "storage",
+					"fieldType": 2,
+					"label": "Name",
+					"shortLabel": "Name",
+					"valueType": "string",
+					"type": 10,
+					"path": "Name"
+				},
+				"3": {
+					"name": "ServiceID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "Service id",
+					"shortLabel": "Service id",
+					"valueType": "number",
+					"type": 4,
+					"path": "ServiceID"
+				},
+				"4": {
+					"name": "managerID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "Manager id",
+					"shortLabel": "Manager id",
+					"valueType": "number",
+					"type": 4,
+					"path": "managerID"
+				},
+				"5": {
+					"name": "Avatar",
+					"kind": "storage",
+					"fieldType": 3,
+					"label": "Avatar",
+					"shortLabel": "Avatar",
+					"valueType": "image",
+					"type": 12,
+					"path": "Avatar"
+				},
+				"7": {
+					"name": "Gender",
+					"kind": "storage",
+					"fieldType": 0,
+					"label": "Gender",
+					"shortLabel": "Gender",
+					"valueType": "string",
+					"type": 10,
+					"path": "Gender"
+				},
+				"manager": {
+					"relatedDataClass": "Employes",
+					"relatedTableNumber": 6,
+					"inverseName": "subordinates",
+					"5": {
+						"name": "Avatar",
+						"kind": "storage",
+						"fieldType": 3,
+						"label": "Avatar",
+						"shortLabel": "Avatar",
+						"valueType": "image",
+						"type": 12,
+						"path": "manager.Avatar"
+					},
+					"7": {
+						"name": "Gender",
+						"kind": "storage",
+						"fieldType": 0,
+						"label": "Gender",
+						"shortLabel": "Gender",
+						"valueType": "string",
+						"type": 10,
+						"path": "manager.Gender"
+					},
+					"1": {
+						"name": "ID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "ID",
+						"shortLabel": "ID",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.ID"
+					},
+					"4": {
+						"name": "managerID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Manager id",
+						"shortLabel": "Manager id",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.managerID"
+					},
+					"2": {
+						"name": "Name",
+						"kind": "storage",
+						"fieldType": 2,
+						"label": "Name",
+						"shortLabel": "Name",
+						"valueType": "string",
+						"type": 10,
+						"path": "manager.Name"
+					},
+					"3": {
+						"name": "ServiceID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Service id",
+						"shortLabel": "Service id",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.ServiceID"
+					}
+				},
+				"aka_Bureaux": {
+					"kind": "alias",
+					"fieldType": 42,
+					"path": "employees.employee_return",
+					"label": "List of aka Bureaux",
+					"shortLabel": "Aka Bureaux"
+				},
+				"aka_Nom": {
+					"kind": "alias",
+					"fieldType": 0,
+					"path": "Name",
+					"label": "Aka nom",
+					"shortLabel": "Aka nom"
+				},
+				"aka_Responsable": {
+					"kind": "alias",
+					"fieldType": 8858,
+					"path": "manager",
+					"label": "Aka Responsable",
+					"shortLabel": "Aka Responsable"
+				},
+				"service": {
+					"relatedDataClass": "Service",
+					"relatedTableNumber": 6,
+					"inverseName": "subordinates",
+					"1": {
+						"name": "ID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "ID",
+						"shortLabel": "ID",
+						"valueType": "number",
+						"type": 4,
+						"path": "service.ID"
+					},
+					"3": {
+						"name": "managerID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Manager id",
+						"shortLabel": "Manager id",
+						"valueType": "number",
+						"type": 4,
+						"path": "service.managerID"
+					},
+					"2": {
+						"name": "Name",
+						"kind": "storage",
+						"fieldType": 0,
+						"label": "Name",
+						"shortLabel": "Name",
+						"valueType": "string",
+						"type": 10,
+						"path": "service.Name"
+					}
+				},
+				"subordinates": {
+					"kind": "relatedEntities",
+					"label": "List of Subordinates",
+					"shortLabel": "Subordinates",
+					"relatedEntities": "Employes",
+					"inverseName": "manager",
+					"relatedDataClass": "Employes",
+					"relatedTableNumber": 6,
+					"isToMany": true,
+					"path": "manager.subordinates"
+				},
+				"serviceManaged": {
+					"kind": "relatedEntities",
+					"label": "List of Service Managed",
+					"shortLabel": "Service Managed",
+					"relatedEntities": "Service",
+					"inverseName": "manager",
+					"relatedDataClass": "Service",
+					"relatedTableNumber": 7,
+					"isToMany": true,
+					"path": "manager.serviceManaged"
+				},
+				"employee_return": {
+					"kind": "relatedEntities",
+					"label": "List of Employee Return",
+					"shortLabel": "Employee Return",
+					"relatedEntities": "EmployesOffices",
+					"inverseName": "employee",
+					"relatedDataClass": "EmployesOffices",
+					"relatedTableNumber": 20,
+					"isToMany": true,
+					"path": "manager.employee_return"
+				}
+			},
+			"4": {
+				"name": "managerID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Manager id",
+				"shortLabel": "Manager id",
+				"valueType": "number",
+				"type": 4
+			},
+			"2": {
+				"name": "Name",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Name",
+				"shortLabel": "Name",
+				"valueType": "string",
+				"type": 10
+			},
+			"service": {
+				"kind": "relatedEntity",
+				"label": "Service",
+				"shortLabel": "Service",
+				"relatedDataClass": "Service",
+				"inverseName": "employees",
+				"relatedTableNumber": 7,
+				"1": {
+					"name": "ID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "ID",
+					"shortLabel": "ID",
+					"valueType": "number",
+					"type": 4,
+					"path": "ID"
+				},
+				"2": {
+					"name": "Name",
+					"kind": "storage",
+					"fieldType": 0,
+					"label": "Name",
+					"shortLabel": "Name",
+					"valueType": "string",
+					"type": 10,
+					"path": "Name"
+				},
+				"3": {
+					"name": "managerID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "Manager id",
+					"shortLabel": "Manager id",
+					"valueType": "number",
+					"type": 4,
+					"path": "managerID"
+				},
+				"manager": {
+					"relatedDataClass": "Employes",
+					"relatedTableNumber": 7,
+					"inverseName": "employees",
+					"5": {
+						"name": "Avatar",
+						"kind": "storage",
+						"fieldType": 3,
+						"label": "Avatar",
+						"shortLabel": "Avatar",
+						"valueType": "image",
+						"type": 12,
+						"path": "manager.Avatar"
+					},
+					"7": {
+						"name": "Gender",
+						"kind": "storage",
+						"fieldType": 0,
+						"label": "Gender",
+						"shortLabel": "Gender",
+						"valueType": "string",
+						"type": 10,
+						"path": "manager.Gender"
+					},
+					"1": {
+						"name": "ID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "ID",
+						"shortLabel": "ID",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.ID"
+					},
+					"4": {
+						"name": "managerID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Manager id",
+						"shortLabel": "Manager id",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.managerID"
+					},
+					"2": {
+						"name": "Name",
+						"kind": "storage",
+						"fieldType": 2,
+						"label": "Name",
+						"shortLabel": "Name",
+						"valueType": "string",
+						"type": 10,
+						"path": "manager.Name"
+					},
+					"3": {
+						"name": "ServiceID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Service id",
+						"shortLabel": "Service id",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.ServiceID"
+					}
+				},
+				"employees": {
+					"kind": "relatedEntities",
+					"label": "List of Employees",
+					"shortLabel": "Employees",
+					"relatedEntities": "Employes",
+					"inverseName": "service",
+					"relatedDataClass": "Employes",
+					"relatedTableNumber": 6,
+					"isToMany": true,
+					"path": "service.employees"
+				},
+				"aka_Nom": {
+					"kind": "alias",
+					"fieldType": 0,
+					"path": "aka_Nom",
+					"label": "Aka nom",
+					"shortLabel": "Aka nom"
+				}
+			},
+			"3": {
+				"name": "ServiceID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Service id",
+				"shortLabel": "Service id",
+				"valueType": "number",
+				"type": 4
+			},
+			"serviceManaged": {
+				"kind": "relatedEntities",
+				"label": "List of Service Managed",
+				"shortLabel": "Service Managed",
+				"relatedEntities": "Service",
+				"inverseName": "manager",
+				"relatedDataClass": "Service",
+				"relatedTableNumber": 7,
+				"isToMany": true
+			},
+			"subordinates": {
+				"kind": "relatedEntities",
+				"label": "List of Subordinates",
+				"shortLabel": "Subordinates",
+				"relatedEntities": "Employes",
+				"inverseName": "manager",
+				"relatedDataClass": "Employes",
+				"relatedTableNumber": 6,
+				"isToMany": true
+			}
+		},
+		"10": {
+			"": {
+				"name": "Only primary key",
+				"label": "Only Primary key",
+				"shortLabel": "Only Prima",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4
+			}
+		},
+		"19": {
+			"": {
+				"name": "Offices",
+				"label": "Offices",
+				"shortLabel": "Offices",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4
+			},
+			"3": {
+				"name": "location",
+				"kind": "storage",
+				"fieldType": 38,
+				"label": "Location",
+				"shortLabel": "Location",
+				"valueType": "object",
+				"type": 21
+			},
+			"2": {
+				"name": "Name",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Name",
+				"shortLabel": "Name",
+				"valueType": "string",
+				"type": 10
+			},
+			"office_return": {
+				"kind": "relatedEntities",
+				"label": "List of Office Return",
+				"shortLabel": "Office Return",
+				"relatedEntities": "EmployesOffices",
+				"inverseName": "office",
+				"relatedDataClass": "EmployesOffices",
+				"relatedTableNumber": 20,
+				"isToMany": true
+			}
+		},
+		"1": {
+			"": {
+				"name": "Commands",
+				"label": "Commands",
+				"shortLabel": "Commands",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"3": {
+				"name": "Command name",
+				"kind": "storage",
+				"fieldType": 0,
+				"label": "Command Name",
+				"shortLabel": "Command Name",
+				"valueType": "string",
+				"type": 10
+			},
+			"2": {
+				"name": "Command Number",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Command Number",
+				"shortLabel": "Command Number",
+				"valueType": "number",
+				"type": 4
+			},
+			"9": {
+				"name": "Comment",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Comment",
+				"shortLabel": "Comment",
+				"valueType": "string",
+				"type": 10
+			},
+			"6": {
+				"name": "description",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Description",
+				"shortLabel": "Description",
+				"valueType": "string",
+				"type": 10
+			},
+			"10": {
+				"name": "icone",
+				"kind": "storage",
+				"fieldType": 3,
+				"label": "Icone",
+				"shortLabel": "Icone",
+				"valueType": "image",
+				"type": 12
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4
+			},
+			"5": {
+				"name": "syntax",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Syntax",
+				"shortLabel": "Syntax",
+				"valueType": "string",
+				"type": 10
+			},
+			"theme": {
+				"kind": "relatedEntity",
+				"label": "Theme",
+				"shortLabel": "Theme",
+				"relatedDataClass": "Themes",
+				"inverseName": "commands",
+				"relatedTableNumber": 13,
+				"1": {
+					"name": "ID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "ID",
+					"shortLabel": "ID",
+					"valueType": "number",
+					"type": 4,
+					"path": "ID"
+				},
+				"2": {
+					"name": "Name",
+					"kind": "storage",
+					"fieldType": 0,
+					"label": "Name",
+					"shortLabel": "Name",
+					"valueType": "string",
+					"type": 10,
+					"path": "Name"
+				},
+				"3": {
+					"name": "Picture",
+					"kind": "storage",
+					"fieldType": 3,
+					"label": "Picture",
+					"shortLabel": "Picture",
+					"valueType": "image",
+					"type": 12,
+					"path": "Picture"
+				},
+				"commands": {
+					"kind": "relatedEntities",
+					"label": "List of Commands",
+					"shortLabel": "Commands",
+					"relatedEntities": "Commands",
+					"inverseName": "theme",
+					"relatedDataClass": "Commands",
+					"relatedTableNumber": 1,
+					"isToMany": true,
+					"path": "theme.commands"
+				}
+			},
+			"8": {
+				"name": "themeID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Theme id",
+				"shortLabel": "Theme id",
+				"valueType": "number",
+				"type": 4
+			},
+			"4": {
+				"name": "themeName",
+				"kind": "storage",
+				"fieldType": 2,
+				"label": "Theme Name",
+				"shortLabel": "Theme Name",
+				"valueType": "string",
+				"type": 10
+			},
+			"7": {
+				"name": "threadsafe",
+				"kind": "storage",
+				"fieldType": 6,
+				"label": "Threadsafe",
+				"shortLabel": "Threadsafe",
+				"valueType": "bool",
+				"type": 1
+			},
+			"11": {
+				"name": "version",
+				"kind": "storage",
+				"fieldType": 0,
+				"label": "Version",
+				"shortLabel": "Version",
+				"valueType": "string",
+				"type": 10
+			}
+		},
+		"20": {
+			"": {
+				"name": "EmployesOffices",
+				"label": "Employes Offices",
+				"shortLabel": "Employes O",
+				"primaryKey": "ID",
+				"embedded": true
+			},
+			"employee": {
+				"kind": "relatedEntity",
+				"label": "Employee",
+				"shortLabel": "Employee",
+				"relatedDataClass": "Employes",
+				"inverseName": "employee_return",
+				"relatedTableNumber": 6,
+				"1": {
+					"name": "ID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "ID",
+					"shortLabel": "ID",
+					"valueType": "number",
+					"type": 4,
+					"path": "ID",
+					"fieldNumber": 1
+				},
+				"2": {
+					"name": "Name",
+					"kind": "storage",
+					"fieldType": 2,
+					"label": "Name",
+					"shortLabel": "Name",
+					"valueType": "string",
+					"type": 10,
+					"path": "Name",
+					"fieldNumber": 2
+				},
+				"3": {
+					"name": "ServiceID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "Service id",
+					"shortLabel": "Service id",
+					"valueType": "number",
+					"type": 4,
+					"path": "ServiceID",
+					"fieldNumber": 3
+				},
+				"4": {
+					"name": "managerID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "Manager id",
+					"shortLabel": "Manager id",
+					"valueType": "number",
+					"type": 4,
+					"path": "managerID",
+					"fieldNumber": 4
+				},
+				"5": {
+					"name": "Avatar",
+					"kind": "storage",
+					"fieldType": 3,
+					"label": "Avatar",
+					"shortLabel": "Avatar",
+					"valueType": "image",
+					"type": 12,
+					"path": "Avatar",
+					"fieldNumber": 5
+				},
+				"7": {
+					"name": "Gender",
+					"kind": "storage",
+					"fieldType": 0,
+					"label": "Gender",
+					"shortLabel": "Gender",
+					"valueType": "string",
+					"type": 10,
+					"path": "Gender",
+					"fieldNumber": 7
+				},
+				"manager": {
+					"relatedDataClass": "Employes",
+					"relatedTableNumber": 6,
+					"inverseName": "employee_return",
+					"5": {
+						"name": "Avatar",
+						"kind": "storage",
+						"fieldType": 3,
+						"label": "Avatar",
+						"shortLabel": "Avatar",
+						"valueType": "image",
+						"type": 12,
+						"path": "manager.Avatar"
+					},
+					"7": {
+						"name": "Gender",
+						"kind": "storage",
+						"fieldType": 0,
+						"label": "Gender",
+						"shortLabel": "Gender",
+						"valueType": "string",
+						"type": 10,
+						"path": "manager.Gender"
+					},
+					"1": {
+						"name": "ID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "ID",
+						"shortLabel": "ID",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.ID"
+					},
+					"4": {
+						"name": "managerID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Manager id",
+						"shortLabel": "Manager id",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.managerID"
+					},
+					"2": {
+						"name": "Name",
+						"kind": "storage",
+						"fieldType": 2,
+						"label": "Name",
+						"shortLabel": "Name",
+						"valueType": "string",
+						"type": 10,
+						"path": "manager.Name"
+					},
+					"3": {
+						"name": "ServiceID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Service id",
+						"shortLabel": "Service id",
+						"valueType": "number",
+						"type": 4,
+						"path": "manager.ServiceID"
+					}
+				},
+				"aka_Bureaux": {
+					"kind": "alias",
+					"fieldType": 42,
+					"path": "employees.employee_return",
+					"label": "List of aka Bureaux",
+					"shortLabel": "Aka Bureaux"
+				},
+				"aka_Nom": {
+					"kind": "alias",
+					"fieldType": 0,
+					"path": "Name",
+					"label": "Aka nom",
+					"shortLabel": "Aka nom"
+				},
+				"aka_Responsable": {
+					"kind": "alias",
+					"fieldType": 8858,
+					"path": "manager",
+					"label": "Aka Responsable",
+					"shortLabel": "Aka Responsable"
+				},
+				"service": {
+					"relatedDataClass": "Service",
+					"relatedTableNumber": 6,
+					"inverseName": "employee_return",
+					"1": {
+						"name": "ID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "ID",
+						"shortLabel": "ID",
+						"valueType": "number",
+						"type": 4,
+						"path": "service.ID"
+					},
+					"3": {
+						"name": "managerID",
+						"kind": "storage",
+						"fieldType": 9,
+						"label": "Manager id",
+						"shortLabel": "Manager id",
+						"valueType": "number",
+						"type": 4,
+						"path": "service.managerID"
+					},
+					"2": {
+						"name": "Name",
+						"kind": "storage",
+						"fieldType": 0,
+						"label": "Name",
+						"shortLabel": "Name",
+						"valueType": "string",
+						"type": 10,
+						"path": "service.Name"
+					}
+				},
+				"subordinates": {
+					"kind": "relatedEntities",
+					"label": "List of Subordinates",
+					"shortLabel": "Subordinates",
+					"relatedEntities": "Employes",
+					"inverseName": "manager",
+					"relatedDataClass": "Employes",
+					"relatedTableNumber": 6,
+					"isToMany": true,
+					"path": "employee.subordinates"
+				},
+				"serviceManaged": {
+					"kind": "relatedEntities",
+					"label": "List of Service Managed",
+					"shortLabel": "Service Managed",
+					"relatedEntities": "Service",
+					"inverseName": "manager",
+					"relatedDataClass": "Service",
+					"relatedTableNumber": 7,
+					"isToMany": true,
+					"path": "employee.serviceManaged"
+				},
+				"employee_return": {
+					"kind": "relatedEntities",
+					"label": "List of Employee Return",
+					"shortLabel": "Employee Return",
+					"relatedEntities": "EmployesOffices",
+					"inverseName": "employee",
+					"relatedDataClass": "EmployesOffices",
+					"relatedTableNumber": 20,
+					"isToMany": true,
+					"path": "employee.employee_return"
+				}
+			},
+			"3": {
+				"name": "employeeID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Employee id",
+				"shortLabel": "Employee id",
+				"valueType": "number",
+				"type": 4,
+				"fieldNumber": 3
+			},
+			"1": {
+				"name": "ID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "ID",
+				"shortLabel": "ID",
+				"valueType": "number",
+				"type": 4,
+				"fieldNumber": 1
+			},
+			"office": {
+				"kind": "relatedEntity",
+				"label": "Office",
+				"shortLabel": "Office",
+				"relatedDataClass": "Offices",
+				"inverseName": "office_return",
+				"relatedTableNumber": 19,
+				"1": {
+					"name": "ID",
+					"kind": "storage",
+					"fieldType": 9,
+					"label": "ID",
+					"shortLabel": "ID",
+					"valueType": "number",
+					"type": 4,
+					"path": "ID",
+					"fieldNumber": 1
+				},
+				"2": {
+					"name": "Name",
+					"kind": "storage",
+					"fieldType": 2,
+					"label": "Name",
+					"shortLabel": "Name",
+					"valueType": "string",
+					"type": 10,
+					"path": "Name",
+					"fieldNumber": 2
+				},
+				"3": {
+					"name": "location",
+					"kind": "storage",
+					"fieldType": 38,
+					"label": "Location",
+					"shortLabel": "Location",
+					"valueType": "object",
+					"type": 21,
+					"path": "location",
+					"fieldNumber": 3
+				},
+				"office_return": {
+					"kind": "relatedEntities",
+					"label": "List of Office Return",
+					"shortLabel": "Office Return",
+					"relatedEntities": "EmployesOffices",
+					"inverseName": "office",
+					"relatedDataClass": "EmployesOffices",
+					"relatedTableNumber": 20,
+					"isToMany": true,
+					"path": "office.office_return"
+				}
+			},
+			"2": {
+				"name": "officeID",
+				"kind": "storage",
+				"fieldType": 9,
+				"label": "Office id",
+				"shortLabel": "Office id",
+				"valueType": "number",
+				"type": 4,
+				"fieldNumber": 2
+			},
+			"4": {
+				"name": "since",
+				"kind": "storage",
+				"fieldType": 4,
+				"label": "Since",
+				"shortLabel": "Since",
+				"valueType": "date",
+				"type": 8,
+				"fieldNumber": 4
+			}
+		}
+	},
+	"list": {
+		"7": {},
+		"5": {},
+		"13": {},
+		"6": {},
+		"10": {},
+		"19": {},
+		"1": {},
+		"20": {}
+	},
+	"detail": {
+		"7": {},
+		"5": {},
+		"13": {},
+		"6": {},
+		"10": {},
+		"19": {},
+		"1": {},
+		"20": {}
+	},
+	"actions": [
+		{
+			"name": "action_0",
+			"scope": "table",
+			"shortLabel": "action_0",
+			"label": "action_0",
+			"parameters": [
+				{
+					"name": "newParameter",
+					"label": "New parameter",
+					"shortLabel": "New parameter",
+					"type": "string"
+				}
+			],
+			"icon": "actions 2/Add.svg",
+			"tableNumber": 5
+		},
+		{
+			"name": "action_3",
+			"scope": "currentRecord",
+			"shortLabel": "action_3",
+			"label": "action_3",
+			"parameters": [
+				{
+					"name": "newParameter",
+					"label": "New parameter",
+					"shortLabel": "New parameter",
+					"type": "string"
+				}
+			],
+			"tableNumber": 5
+		},
+		{
+			"tableNumber": 7,
+			"name": "addService",
+			"preset": "add",
+			"scope": "table",
+			"icon": "actions 2/Add.svg",
+			"label": "Add…",
+			"shortLabel": "Add…",
+			"parameters": []
+		},
+		{
+			"tableNumber": 7,
+			"name": "editService",
+			"preset": "edit",
+			"scope": "currentRecord",
+			"icon": "actions/Edit.svg",
+			"label": "Edit…",
+			"shortLabel": "Edit…",
+			"parameters": []
+		},
+		{
+			"tableNumber": 6,
+			"name": "shareEmployes",
+			"preset": "share",
+			"scope": "currentRecord",
+			"icon": "actions/Send-basic.svg",
+			"label": "Share…",
+			"shortLabel": "Share…"
+		},
+		{
+			"tableNumber": 5,
+			"name": "addAllTypes",
+			"preset": "add",
+			"scope": "table",
+			"icon": "actions 2/Add.svg",
+			"label": "Add…",
+			"shortLabel": "Add…",
+			"parameters": [
+				{
+					"fieldNumber": 1,
+					"name": "aka_identifiant",
+					"label": "Aka Identifiant",
+					"shortLabel": "Aka Identifiant",
+					"type": "number",
+					"format": "integer"
+				},
+				{
+					"fieldNumber": 15,
+					"name": "aka_objet",
+					"label": "Aka Objet",
+					"shortLabel": "Aka Objet",
+					"type": "object"
+				},
+				{
+					"fieldNumber": 2,
+					"name": "Alpha Field",
+					"label": "Alpha Field",
+					"shortLabel": "Alpha Field",
+					"type": "string"
+				},
+				{
+					"fieldNumber": 6,
+					"name": "Boolean field",
+					"label": "Boolean Field",
+					"shortLabel": "Boolean Field",
+					"type": "bool"
+				},
+				{
+					"name": "calc_booléen",
+					"label": "calc_booléen",
+					"shortLabel": "calc_booléen",
+					"type": "bool"
+				},
+				{
+					"fieldNumber": 4,
+					"name": "Date field",
+					"label": "Date Field",
+					"shortLabel": "Date Field",
+					"type": "date",
+					"format": "shortDate"
+				},
+				{
+					"fieldNumber": 11,
+					"name": "Float field",
+					"label": "Float Field",
+					"shortLabel": "Float Field",
+					"type": "number"
+				},
+				{
+					"fieldNumber": 9,
+					"name": "Integer 64 bits field",
+					"label": "Integer 64 Bits Field",
+					"shortLabel": "Integer 64 Bits Field",
+					"type": "number",
+					"format": "integer"
+				},
+				{
+					"fieldNumber": 7,
+					"name": "Integer field",
+					"label": "Integer Field",
+					"shortLabel": "Integer Field",
+					"type": "number",
+					"format": "integer"
+				},
+				{
+					"fieldNumber": 8,
+					"name": "Long Integer field",
+					"label": "Long Integer Field",
+					"shortLabel": "Long Integer Field",
+					"type": "number",
+					"format": "integer"
+				},
+				{
+					"fieldNumber": 13,
+					"name": "Picture field",
+					"label": "Picture Field",
+					"shortLabel": "Picture Field",
+					"type": "image"
+				},
+				{
+					"fieldNumber": 10,
+					"name": "Real field",
+					"label": "Real Field",
+					"shortLabel": "Real Field",
+					"type": "number"
+				},
+				{
+					"fieldNumber": 3,
+					"name": "Text field",
+					"label": "Text Field",
+					"shortLabel": "Text Field",
+					"type": "string"
+				},
+				{
+					"fieldNumber": 5,
+					"name": "Time field",
+					"label": "Time Field",
+					"shortLabel": "Time Field",
+					"type": "time"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,10 @@
+//%attributes = {"invisible":true}
+C_OBJECT:C1216(ofType; $0)
+C_TEXT:C284(ofType; $1)
+C_OBJECT:C1216(notOf; $0)
+C_OBJECT:C1216(notOf; $1)
+C_OBJECT:C1216(allOf; $0)
+C_OBJECT:C1216(allOf; $1)
+C_OBJECT:C1216(anyOf; $0)
+C_OBJECT:C1216(anyOf; $1)
+C_OBJECT:C1216(anyOf; $2)

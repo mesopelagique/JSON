@@ -1,0 +1,215 @@
+{
+	"_method_": {},
+	"Schema": {
+		"new()": {
+			"Syntax": "**.new**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"validate()": {
+			"Syntax": "**.validate**(*obj* : Object)->result : Object",
+			"Params": [
+				[
+					"obj",
+					"Object",
+					"->"
+				],
+				[
+					"result",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"stringify()": {
+			"Syntax": "**.stringify**(*prettify* : Boolean)->jsonString : Text",
+			"Params": [
+				[
+					"prettify",
+					"Boolean",
+					"->"
+				],
+				[
+					"jsonString",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"load()": {
+			"Syntax": "**.load**(*obj* : Object)",
+			"Params": [
+				[
+					"obj",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"_inheritedFrom_": "SchemaNode"
+	},
+	"SchemaNode": {
+		"setRequired()": {
+			"Syntax": "**.setRequired**(*property* : Text)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"property",
+					"Text",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setAdditionalProperties()": {
+			"Syntax": "**.setAdditionalProperties**(*value* : Variant)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Variant",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addPatternProperty()": {
+			"Syntax": "**.addPatternProperty**(*pattern* : Text; *node* : cs.JSON.SchemaNode)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"pattern",
+					"Text",
+					"->"
+				],
+				[
+					"node",
+					"cs.JSON.SchemaNode",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addProperty()": {
+			"Syntax": "**.addProperty**(*property* : Text; *node* : cs.JSON.SchemaNode; *required* : Boolean)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"property",
+					"Text",
+					"->"
+				],
+				[
+					"node",
+					"cs.JSON.SchemaNode",
+					"->"
+				],
+				[
+					"required",
+					"Boolean",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"ofType()": {
+			"Syntax": "**.ofType**(*type* : Text)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"type",
+					"Text",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addItem()": {
+			"Syntax": "**.addItem**(*node* : cs.JSON.SchemaNode)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"node",
+					"cs.JSON.SchemaNode",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setComment()": {
+			"Syntax": "**.setComment**(*comment* : Text)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"comment",
+					"Text",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setConst()": {
+			"Syntax": "**.setConst**(*value* : Variant)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Variant",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setEnum()": {
+			"Syntax": "**.setEnum**(*enum* : Collection)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"enum",
+					"Collection",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	}
+}

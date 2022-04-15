@@ -1,0 +1,313 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"info": {
+			"type": "object",
+			"properties": {
+				"version": {
+					"type": "integer"
+				},
+				"ideVersion": {
+					"type": "string"
+				},
+				"ideBuildVersion": {
+					"type": "string"
+				},
+				"componentBuild": {
+					"type": "string"
+				},
+				"target": {
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						{
+							"type": "string"
+						}
+					]
+				}
+			}
+		},
+		"product": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"version": {
+					"type": "string"
+				},
+				"copyright": {
+					"type": "string"
+				},
+				"bundleIdentifier": {
+					"type": "string"
+				}
+			}
+		},
+		"organization": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"teamId": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				}
+			}
+		},
+		"developer": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				}
+			}
+		},
+		"ui": {
+			"type": "object",
+			"properties": {
+				"dominantColor": {
+					"type": "string"
+				}
+			}
+		},
+		"dataModel": {
+			"type": "object",
+			"patternProperties": {
+				"[0-9]+": {
+					"type": "object",
+					"properties": {
+						"": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"label": {
+									"type": "string"
+								},
+								"shortLabel": {
+									"type": "string"
+								},
+								"primaryKey": {
+									"type": "string"
+								},
+								"embedded": {
+									"type": "boolean"
+								}
+							},
+							"required": [
+								"name"
+							]
+						}
+					},
+					"required": [
+						""
+					]
+				}
+			}
+		},
+		"dataSource": {
+			"type": "object",
+			"properties": {
+				"source": {
+					"type": "string"
+				},
+				"doNotGenerateDataAtEachBuild": {
+					"type": "boolean"
+				},
+				"doNotExportImages": {
+					"type": "boolean"
+				}
+			}
+		},
+		"server": {
+			"type": "object",
+			"properties": {
+				"urls": {
+					"type": "object",
+					"properties": {
+						"production": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		},
+		"main": {
+			"type": "object",
+			"properties": {
+				"navigationTitle": {
+					"type": "string"
+				},
+				"navigationType": {
+					"type": "string"
+				},
+				"order": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"list": {
+			"type": "object",
+			"patternProperties": {
+				"[0-9]+": {
+					"type": "object",
+					"properties": {
+						"form": {
+							"type": "string"
+						},
+						"fields": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"kind": {
+										"type": "string"
+									},
+									"fieldType": {
+										"type": "integer"
+									},
+									"fieldNumber": {
+										"type": "integer"
+									},
+									"path": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"name",
+									"kind",
+									"fieldType"
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"detail": {
+			"type": "object",
+			"patternProperties": {
+				"[0-9]+": {
+					"type": "object",
+					"properties": {
+						"form": {
+							"type": "string"
+						},
+						"fields": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"kind": {
+										"type": "string"
+									},
+									"fieldType": {
+										"type": "integer"
+									},
+									"fieldNumber": {
+										"type": "integer"
+									},
+									"path": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"name",
+									"kind",
+									"fieldType"
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"actions": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"scope": {
+						"type": "string"
+					},
+					"label": {
+						"type": "string"
+					},
+					"shortLabel": {
+						"type": "string"
+					},
+					"icon": {
+						"type": "string"
+					},
+					"tableNumber": {
+						"type": "integer"
+					},
+					"parameters": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"label": {
+									"type": "string"
+								},
+								"shortLabel": {
+									"type": "string"
+								},
+								"type": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"name",
+								"type"
+							]
+						}
+					}
+				},
+				"required": [
+					"name",
+					"scope"
+				]
+			}
+		}
+	},
+	"required": [
+		"info",
+		"product",
+		"organization",
+		"developer",
+		"ui",
+		"dataModel",
+		"dataSource",
+		"server",
+		"main"
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"of": {
+		"methods": [
+			"allOf",
+			"anyOf",
+			"notOf",
+			"ofType"
+		]
+	},
+	"schema": {
+		"groups": [
+			"of",
+			"test"
+		],
+		"classes": [
+			"Schema",
+			"SchemaNode"
+		]
+	},
+	"test": {
+		"methods": [
+			"test_projectMobile"
+		]
+	},
+	"trash": {}
+}
