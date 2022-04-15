@@ -88,3 +88,52 @@ Function addItem($node : cs:C1710.SchemaNode)->$this : cs:C1710.SchemaNode
 	
 	$this:=This:C1470
 	
+Function setMinItems($value : Integer)->$this : cs:C1710.SchemaNode
+	This:C1470.minItems:=$value
+	$this:=This:C1470
+	
+Function setMaxItems($value : Integer)->$this : cs:C1710.SchemaNode
+	This:C1470.maxItems:=$value
+	$this:=This:C1470
+	
+Function setUniqueItems($value : Boolean)->$this : cs:C1710.SchemaNode
+	This:C1470.uniqueItems:=$value
+	$this:=This:C1470
+	
+	// MARK: string
+	
+Function setMinLength($value : Integer)->$this : cs:C1710.SchemaNode
+	This:C1470.minLength:=$value
+	$this:=This:C1470
+	
+Function setMaxLength($value : Integer)->$this : cs:C1710.SchemaNode
+	This:C1470.maxLength:=$value
+	$this:=This:C1470
+	
+Function setPattern($value : Text)->$this : cs:C1710.SchemaNode
+	This:C1470.pattern:=$value
+	$this:=This:C1470
+	
+	// MARK: numeric
+	
+Function setMultipleOf($value : Real)->$this : cs:C1710.SchemaNode
+	This:C1470.multipleOf:=$value
+	$this:=This:C1470
+	
+Function setMinimum($value : Real)->$this : cs:C1710.SchemaNode
+	This:C1470.minimum:=$value
+	$this:=This:C1470
+	
+Function setMaximum($value : Real)->$this : cs:C1710.SchemaNode
+	This:C1470.maximum:=$value
+	$this:=This:C1470
+	
+Function setExclusiveMinimum($value : Real)->$this : cs:C1710.SchemaNode
+	This:C1470.exclusiveMinimum:=$value
+	$this:=This:C1470
+	
+Function setExclusiveMaximum($value : Real)->$this : cs:C1710.SchemaNode
+	This:C1470.exclusiveMaximum:=$value
+	$this:=This:C1470
+	
+	

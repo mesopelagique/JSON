@@ -52,12 +52,172 @@
 		"_inheritedFrom_": "SchemaNode"
 	},
 	"SchemaNode": {
+		"setExclusiveMaximum()": {
+			"Syntax": "**.setExclusiveMaximum**(*value* : Real)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Real",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setExclusiveMinimum()": {
+			"Syntax": "**.setExclusiveMinimum**(*value* : Real)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Real",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setPattern()": {
+			"Syntax": "**.setPattern**(*value* : Text)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setMaxLength()": {
+			"Syntax": "**.setMaxLength**(*value* : Integer)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Integer",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setMaximum()": {
+			"Syntax": "**.setMaximum**(*value* : Real)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Real",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setUniqueItems()": {
+			"Syntax": "**.setUniqueItems**(*value* : Boolean)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Boolean",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setMinLength()": {
+			"Syntax": "**.setMinLength**(*value* : Integer)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Integer",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setMinItems()": {
+			"Syntax": "**.setMinItems**(*value* : Integer)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Integer",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setMaxItems()": {
+			"Syntax": "**.setMaxItems**(*value* : Integer)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Integer",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
 		"setRequired()": {
 			"Syntax": "**.setRequired**(*property* : Text)->this : cs.JSON.SchemaNode",
 			"Params": [
 				[
 					"property",
 					"Text",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setConst()": {
+			"Syntax": "**.setConst**(*value* : Variant)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Variant",
 					"->"
 				],
 				[
@@ -95,6 +255,38 @@
 				[
 					"node",
 					"cs.JSON.SchemaNode",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setMultipleOf()": {
+			"Syntax": "**.setMultipleOf**(*value* : Real)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Real",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setEnum()": {
+			"Syntax": "**.setEnum**(*enum* : Collection)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"enum",
+					"Collection",
 					"->"
 				],
 				[
@@ -147,6 +339,22 @@
 			],
 			"Summary": ""
 		},
+		"setMinimum()": {
+			"Syntax": "**.setMinimum**(*value* : Real)->this : cs.JSON.SchemaNode",
+			"Params": [
+				[
+					"value",
+					"Real",
+					"->"
+				],
+				[
+					"this",
+					"cs.JSON.SchemaNode",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
 		"addItem()": {
 			"Syntax": "**.addItem**(*node* : cs.JSON.SchemaNode)->this : cs.JSON.SchemaNode",
 			"Params": [
@@ -169,38 +377,6 @@
 				[
 					"comment",
 					"Text",
-					"->"
-				],
-				[
-					"this",
-					"cs.JSON.SchemaNode",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"setConst()": {
-			"Syntax": "**.setConst**(*value* : Variant)->this : cs.JSON.SchemaNode",
-			"Params": [
-				[
-					"value",
-					"Variant",
-					"->"
-				],
-				[
-					"this",
-					"cs.JSON.SchemaNode",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"setEnum()": {
-			"Syntax": "**.setEnum**(*enum* : Collection)->this : cs.JSON.SchemaNode",
-			"Params": [
-				[
-					"enum",
-					"Collection",
 					"->"
 				],
 				[
