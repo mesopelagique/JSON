@@ -6,13 +6,16 @@
 			"type": "object",
 			"properties": {
 				"version": {
-					"type": "integer"
+					"type": "integer",
+					"$comment": "version of this schema"
 				},
 				"ideVersion": {
-					"type": "string"
+					"type": "string",
+					"$comment": "4D Version; ex 1960"
 				},
 				"ideBuildVersion": {
-					"type": "string"
+					"type": "string",
+					"$comment": "4D build version"
 				},
 				"componentBuild": {
 					"type": "string"
@@ -22,15 +25,24 @@
 						{
 							"type": "array",
 							"items": {
-								"type": "string"
+								"type": "string",
+								"enum": [
+									"iOS",
+									"android"
+								]
 							}
 						},
 						{
-							"type": "string"
+							"type": "string",
+							"enum": [
+								"iOS",
+								"android"
+							]
 						}
 					]
 				}
-			}
+			},
+			"$comment": "Mainly info about IDE which produce the file"
 		},
 		"product": {
 			"type": "object",
@@ -47,7 +59,8 @@
 				"bundleIdentifier": {
 					"type": "string"
 				}
-			}
+			},
+			"$comment": "Info of mobile app"
 		},
 		"organization": {
 			"type": "object",
@@ -61,7 +74,8 @@
 				"id": {
 					"type": "string"
 				}
-			}
+			},
+			"$comment": "Info of dev team (useful to sign and to identify app)"
 		},
 		"developer": {
 			"type": "object",
@@ -72,7 +86,8 @@
 				"id": {
 					"type": "string"
 				}
-			}
+			},
+			"$comment": "Info of dev (useful to sign and put in generated source code)"
 		},
 		"ui": {
 			"type": "object",
@@ -213,7 +228,8 @@
 						}
 					}
 				}
-			}
+			},
+			"$comment": "Describe the entities and their attributed need by the app"
 		},
 		"dataSource": {
 			"type": "object",
@@ -289,7 +305,8 @@
 						]
 					}
 				}
-			}
+			},
+			"$comment": "Describe the main menu"
 		},
 		"list": {
 			"type": "object",
@@ -330,7 +347,8 @@
 						}
 					}
 				}
-			}
+			},
+			"$comment": "Define fields/attributes affected to list table forms by table"
 		},
 		"detail": {
 			"type": "object",
@@ -371,7 +389,8 @@
 						}
 					}
 				}
-			}
+			},
+			"$comment": "Define fields/attributes affected to detail table forms by table"
 		},
 		"actions": {
 			"type": "array",

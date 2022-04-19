@@ -1,7 +1,9 @@
 //%attributes = {}
 //
-var $version : Text
-$version:="1960"
+var $version : Integer
+$version:=7
+var $4dversion : Text
+$4dversion:="1960"
 
 var $features : Object
 $features:=New object:C1471("launchActionFromTabBar"; True:C214)
@@ -12,34 +14,38 @@ $schema:=cs:C1710.Schema.new()
 
 // App infos
 
-var $target; $info; $product; $organization; $developer : cs:C1710.SchemaNode
-
-$target:=anyOf(ofType("array").addItem(ofType("string")); ofType("string"))  // object too?
+var $target; $targets; $info; $product; $organization; $developer : cs:C1710.SchemaNode
+$target:=ofType("string").setEnum(New collection:C1472("iOS"; "android"))
+$targets:=anyOf(ofType("array").addItem($target); $target)
 
 $info:=ofType("object")\
-.addProperty("version"; ofType("integer"))\
-.addProperty("ideVersion"; ofType("string"))\
-.addProperty("ideBuildVersion"; ofType("string"))\
+.addProperty("version"; ofType("integer").setComment("version of this schema"))\
+.addProperty("ideVersion"; ofType("string").setComment("4D Version; ex 1960"))\
+.addProperty("ideBuildVersion"; ofType("string").setComment("4D build version"))\
 .addProperty("componentBuild"; ofType("string"))\
-.addProperty("target"; $target)
+.addProperty("target"; $targets)\
+.setComment("Mainly info about IDE which produce the file")
 $schema.addProperty("info"; $info; True:C214)
 
 $product:=ofType("object")\
 .addProperty("name"; ofType("string"))\
 .addProperty("version"; ofType("string"))\
 .addProperty("copyright"; ofType("string"))\
-.addProperty("bundleIdentifier"; ofType("string"))
+.addProperty("bundleIdentifier"; ofType("string"))\
+.setComment("Info of mobile app")
 $schema.addProperty("product"; $product; True:C214)
 
 $organization:=ofType("object")\
 .addProperty("name"; ofType("string"))\
 .addProperty("teamId"; ofType("string"))\
-.addProperty("id"; ofType("string"))
+.addProperty("id"; ofType("string"))\
+.setComment("Info of dev team (useful to sign and to identify app)")
 $schema.addProperty("organization"; $organization; True:C214)
 
 $developer:=ofType("object")\
 .addProperty("name"; ofType("string"))\
-.addProperty("id"; ofType("string"))
+.addProperty("id"; ofType("string"))\
+.setComment("Info of dev (useful to sign and put in generated source code)")
 $schema.addProperty("developer"; $developer; True:C214)
 
 // Theme
@@ -83,7 +89,8 @@ $entity:=ofType("object")\
 .addPatternProperty("^(?!\\s*$).+"; $attribute)  // maybe more restrictive on pattern of relation/alias/calculated
 
 $dataModel:=ofType("object")\
-.addPatternProperty("[0-9]+"; $entity)
+.addPatternProperty("[0-9]+"; $entity)\
+.setComment("Describe the entities and their attributed need by the app")
 $schema.addProperty("dataModel"; $dataModel; True:C214)
 
 $dataSource:=ofType("object")\
@@ -119,7 +126,8 @@ var $main : cs:C1710.SchemaNode
 $main:=ofType("object")\
 .addProperty("navigationTitle"; ofType("string"))\
 .addProperty("navigationType"; ofType("string"))\
-.addProperty("order"; $menuDefinition)
+.addProperty("order"; $menuDefinition)\
+.setComment("Describe the main menu")
 $schema.addProperty("main"; $main; True:C214)
 
 // The forms: if not filled, will use default form
@@ -137,11 +145,13 @@ $formDefinition:=ofType("object")\
 .addProperty("fields"; ofType("array").addItem($formField))
 
 $list:=ofType("object")\
-.addPatternProperty("[0-9]+"; $formDefinition)
+.addPatternProperty("[0-9]+"; $formDefinition)\
+.setComment("Define fields/attributes affected to list table forms by table")
 $schema.addProperty("list"; $list; False:C215)
 
 $detail:=ofType("object")\
-.addPatternProperty("[0-9]+"; $formDefinition)
+.addPatternProperty("[0-9]+"; $formDefinition)\
+.setComment("Define fields/attributes affected to detail table forms by table")
 $schema.addProperty("detail"; $detail; False:C215)
 
 // Actions
