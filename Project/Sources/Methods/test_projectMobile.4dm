@@ -1,5 +1,10 @@
 //%attributes = {}
+//
+var $version : Text
+$version:="1960"
 
+var $features : Object
+$features:=New object:C1471("launchActionFromTabBar"; True:C214)
 
 
 var $schema : cs:C1710.Schema
@@ -48,15 +53,23 @@ $schema.addProperty("ui"; $ui; True:C214)
 // Data/Server
 
 var $attribute; $entityInfo; $entity; $dataModel; $dataSource; $server : cs:C1710.SchemaNode
+
+var $attributeTypes; $valueTypes : Collection
+$attributeTypes:=New collection:C1472("storage"; "relatedEntity"; "relatedEntities"; "calculated"; "alias")
+$valueTypes:=New collection:C1472("number"; "string"; "date"; "image"; "object"; "bool")  // TODO to complete?
+
 $attribute:=ofType("object")\
-.addProperty("name"; ofType("string"); True:C214)\
+.addProperty("name"; ofType("string"))\
 .addProperty("fieldNumber"; ofType("integer"))\
 .addProperty("label"; ofType("string"))\
 .addProperty("shortLabel"; ofType("string"))\
-.addProperty("kind"; ofType("string"))\
+.addProperty("kind"; ofType("string").setEnum($attributeTypes); True:C214)\
 .addProperty("fieldType"; ofType("integer"))\
-.addProperty("valueType"; ofType("string"))\
+.addProperty("valueType"; ofType("string").setEnum($valueTypes))\
 .addProperty("type"; ofType("integer"))
+
+$attributeNamed:=OB Copy:C1225($attribute)\
+.addProperty("name"; ofType("string"); True:C214)
 
 $entityInfo:=ofType("object")\
 .addProperty("name"; ofType("string"); True:C214)\
@@ -65,7 +78,10 @@ $entityInfo:=ofType("object")\
 .addProperty("primaryKey"; ofType("string"))\
 .addProperty("embedded"; ofType("boolean"))
 $entity:=ofType("object")\
-.addProperty(""; $entityInfo; True:C214)
+.addProperty(""; $entityInfo; True:C214)\
+.addPatternProperty("[0-9]+"; $attributeNamed)\
+.addPatternProperty("^(?!\\s*$).+"; $attribute)  // maybe more restrictive on pattern of relation/alias/calculated
+
 $dataModel:=ofType("object")\
 .addPatternProperty("[0-9]+"; $entity)
 $schema.addProperty("dataModel"; $dataModel; True:C214)
@@ -82,11 +98,28 @@ $schema.addProperty("server"; $server; True:C214)
 
 // Navigation/Main form
 
+var $menuDefinition; $menuItem; $menuTableItem; $menuActionItem : cs:C1710.SchemaNode
+$menuTableItem:=ofType("string").setComment("table number")/*TODO add number pattern*/
+If (Bool:C1537($features.launchActionFromTabBar))
+	
+	$menuActionItem:=ofType("object")\
+		.addProperty("name"; ofType("string"); True:C214)\
+		.addProperty("label"; ofType("string"))\
+		.addProperty("shortLabel"; ofType("string"))\
+		.addProperty("icon"; ofType("string"))\
+		.addProperty("actions"; ofType("array").addItem(ofType("string").setComment("action name")))
+	
+	$menuItem:=anyOf($menuTableItem; $menuActionItem)
+Else 
+	$menuItem:=$menuTableItem
+End if 
+$menuDefinition:=ofType("array").addItem($menuItem)
+
 var $main : cs:C1710.SchemaNode
 $main:=ofType("object")\
 .addProperty("navigationTitle"; ofType("string"))\
 .addProperty("navigationType"; ofType("string"))\
-.addProperty("order"; ofType("array").addItem(ofType("string")))
+.addProperty("order"; $menuDefinition)
 $schema.addProperty("main"; $main; True:C214)
 
 // The forms: if not filled, will use default form
@@ -119,9 +152,15 @@ $actionParameter:=ofType("object")\
 .addProperty("shortLabel"; ofType("string"))\
 .addProperty("type"; ofType("string"); True:C214)
 
+var $actionScopes : Collection
+$actionScopes:=New collection:C1472("table"; "currentRecord")
+If (Bool:C1537($features.launchActionFromTabBar))
+	$actionScopes.push("global")
+End if 
+
 $action:=ofType("object")\
 .addProperty("name"; ofType("string"); True:C214)\
-.addProperty("scope"; ofType("string"); True:C214)\
+.addProperty("scope"; ofType("string").setEnum($actionScopes); True:C214)\
 .addProperty("label"; ofType("string"))\
 .addProperty("shortLabel"; ofType("string"))\
 .addProperty("icon"; ofType("string"))\

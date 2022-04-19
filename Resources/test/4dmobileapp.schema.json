@@ -114,7 +114,104 @@
 					},
 					"required": [
 						""
-					]
+					],
+					"patternProperties": {
+						"[0-9]+": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"fieldNumber": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								},
+								"shortLabel": {
+									"type": "string"
+								},
+								"kind": {
+									"type": "string",
+									"enum": [
+										"storage",
+										"relatedEntity",
+										"relatedEntities",
+										"calculated",
+										"alias"
+									]
+								},
+								"fieldType": {
+									"type": "integer"
+								},
+								"valueType": {
+									"type": "string",
+									"enum": [
+										"number",
+										"string",
+										"date",
+										"image",
+										"object",
+										"bool"
+									]
+								},
+								"type": {
+									"type": "integer"
+								}
+							},
+							"required": [
+								"kind",
+								"name"
+							]
+						},
+						"^(?!\\s*$).+": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"fieldNumber": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								},
+								"shortLabel": {
+									"type": "string"
+								},
+								"kind": {
+									"type": "string",
+									"enum": [
+										"storage",
+										"relatedEntity",
+										"relatedEntities",
+										"calculated",
+										"alias"
+									]
+								},
+								"fieldType": {
+									"type": "integer"
+								},
+								"valueType": {
+									"type": "string",
+									"enum": [
+										"number",
+										"string",
+										"date",
+										"image",
+										"object",
+										"bool"
+									]
+								},
+								"type": {
+									"type": "integer"
+								}
+							},
+							"required": [
+								"kind"
+							]
+						}
+					}
 				}
 			}
 		},
@@ -157,7 +254,39 @@
 				"order": {
 					"type": "array",
 					"items": {
-						"type": "string"
+						"anyOf": [
+							{
+								"type": "string",
+								"$comment": "table number"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"label": {
+										"type": "string"
+									},
+									"shortLabel": {
+										"type": "string"
+									},
+									"icon": {
+										"type": "string"
+									},
+									"actions": {
+										"type": "array",
+										"items": {
+											"type": "string",
+											"$comment": "action name"
+										}
+									}
+								},
+								"required": [
+									"name"
+								]
+							}
+						]
 					}
 				}
 			}
@@ -253,7 +382,12 @@
 						"type": "string"
 					},
 					"scope": {
-						"type": "string"
+						"type": "string",
+						"enum": [
+							"table",
+							"currentRecord",
+							"global"
+						]
 					},
 					"label": {
 						"type": "string"
