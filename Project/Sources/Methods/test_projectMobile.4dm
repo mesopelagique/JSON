@@ -16,7 +16,7 @@ $schema:=cs:C1710.Schema.new()
 
 var $target; $targets; $info; $product; $organization; $developer : cs:C1710.SchemaNode
 $target:=ofType("string").setEnum(New collection:C1472("iOS"; "android"))
-$targets:=anyOf(ofType("array").addItem($target); $target)
+$targets:=oneOf(ofType("array").addItem($target); $target)
 
 $info:=ofType("object")\
 .addProperty("version"; ofType("integer").setComment("version of this schema"))\
@@ -99,9 +99,9 @@ $attributeAlias:=OB Copy:C1225($attributeBase)\
 
 var $attributeNamePattern : Text
 $attributeNamePattern:="[A-Za-z_][A-Za-z\\d_]*"  // CLEAN: to enchance?
-/*
-TODO manage recu
-$attribute.addPatternProperty("[0-9]+"; OB Copy($attributeNamed)).addPatternProperty("^(?!\\s*$).+"; OB Copy($attribute))*/
+
+// TODO manage recu
+//$attributeRelatedEntity.addPatternProperty("[0-9]+"; oneOf(OB Copy($attributeRelatedEntity); OB Copy($attributeRelatedEntities); OB Copy($attributeCalculated); OB Copy($attributeAlias)))
 
 var $entityInfo; $entity; $dataModel; $dataSource; $server : cs:C1710.SchemaNode
 $entityInfo:=ofType("object")\
@@ -143,7 +143,7 @@ If (Bool:C1537($features.launchActionFromTabBar))
 		.addProperty("icon"; ofType("string"))\
 		.addProperty("actions"; ofType("array").addItem(ofType("string").setComment("action name")))
 	
-	$menuItem:=anyOf($menuTableItem; $menuActionItem)
+	$menuItem:=oneOf($menuTableItem; $menuActionItem)
 Else 
 	$menuItem:=$menuTableItem
 End if 

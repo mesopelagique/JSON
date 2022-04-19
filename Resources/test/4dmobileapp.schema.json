@@ -21,7 +21,7 @@
 					"type": "string"
 				},
 				"target": {
-					"anyOf": [
+					"oneOf": [
 						{
 							"type": "array",
 							"items": {
@@ -331,7 +331,7 @@
 				"order": {
 					"type": "array",
 					"items": {
-						"anyOf": [
+						"oneOf": [
 							{
 								"type": "string",
 								"$comment": "table number"
