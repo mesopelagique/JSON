@@ -52,7 +52,7 @@ $schema.addProperty("ui"; $ui; True:C214)
 
 // Data/Server
 
-var $attribute; $entityInfo; $entity; $dataModel; $dataSource; $server : cs:C1710.SchemaNode
+var $attribute; $attributeNamed; $entityInfo; $entity; $dataModel; $dataSource; $server : cs:C1710.SchemaNode
 
 var $attributeTypes; $valueTypes : Collection
 $attributeTypes:=New collection:C1472("storage"; "relatedEntity"; "relatedEntities"; "calculated"; "alias")
