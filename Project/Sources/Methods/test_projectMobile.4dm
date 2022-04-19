@@ -58,25 +58,52 @@ $schema.addProperty("ui"; $ui; True:C214)
 
 // Data/Server
 
-var $attribute; $attributeNamed; $entityInfo; $entity; $dataModel; $dataSource; $server : cs:C1710.SchemaNode
+var $attributeBase; $attributeStorage; $attributeRelatedEntity; $attributeRelatedEntities; $attributeCalculated; $attributeAlias : cs:C1710.SchemaNode
 
 var $attributeTypes; $valueTypes : Collection
 $attributeTypes:=New collection:C1472("storage"; "relatedEntity"; "relatedEntities"; "calculated"; "alias")
 $valueTypes:=New collection:C1472("number"; "string"; "date"; "image"; "object"; "bool")  // TODO to complete?
 
-$attribute:=ofType("object")\
-.addProperty("name"; ofType("string"))\
-.addProperty("fieldNumber"; ofType("integer"))\
+$attributeBase:=ofType("object")\
 .addProperty("label"; ofType("string"))\
-.addProperty("shortLabel"; ofType("string"))\
-.addProperty("kind"; ofType("string").setEnum($attributeTypes); True:C214)\
-.addProperty("fieldType"; ofType("integer"))\
-.addProperty("valueType"; ofType("string").setEnum($valueTypes))\
-.addProperty("type"; ofType("integer"))
+.addProperty("shortLabel"; ofType("string"))
+// .addProperty("kind"; ofType("string").setEnum($attributeTypes); True)\
 
-$attributeNamed:=OB Copy:C1225($attribute)\
+$attributeStorage:=OB Copy:C1225($attributeBase)\
+.addProperty("fieldNumber"; ofType("integer"); False:C215/*if true it failed*/)\
+.addProperty("kind"; ofType("string").setEnum(New collection:C1472("storage"); True:C214))\
+.addProperty("valueType"; ofType("string").setEnum($valueTypes); True:C214)\
+.addProperty("fieldType"; ofType("integer"); True:C214)\
+.addProperty("type"; ofType("integer"); True:C214)\
 .addProperty("name"; ofType("string"); True:C214)
 
+$attributeRelatedEntity:=OB Copy:C1225($attributeBase)\
+.addProperty("kind"; ofType("string").setEnum(New collection:C1472("relatedEntity"); True:C214))\
+.addProperty("relatedDataClass"; ofType("string"); True:C214)\
+.addProperty("inverseName"; ofType("string"); True:C214)\
+.addProperty("relatedTableNumber"; ofType("integer"); True:C214)
+
+$attributeRelatedEntities:=OB Copy:C1225($attributeBase)\
+.addProperty("kind"; ofType("string").setEnum(New collection:C1472("relatedEntities"); True:C214))\
+.addProperty("relatedDataClass"; ofType("string"); True:C214)\
+.addProperty("inverseName"; ofType("string"); True:C214)\
+.addProperty("relatedTableNumber"; ofType("integer"); True:C214)\
+.addProperty("isToMany"; ofType("boolean"); True:C214)
+// .addProperty("relatedEntities"; ofType("string"); True)
+
+$attributeCalculated:=OB Copy:C1225($attributeBase)\
+.addProperty("kind"; ofType("string").setEnum(New collection:C1472("calculated"); True:C214))
+$attributeAlias:=OB Copy:C1225($attributeBase)\
+.addProperty("kind"; ofType("string").setEnum(New collection:C1472("alias"); True:C214))\
+.addProperty("path"; ofType("string"); True:C214)
+
+var $attributeNamePattern : Text
+$attributeNamePattern:="[A-Za-z_][A-Za-z\\d_]*"  // CLEAN: to enchance?
+/*
+TODO manage recu
+$attribute.addPatternProperty("[0-9]+"; OB Copy($attributeNamed)).addPatternProperty("^(?!\\s*$).+"; OB Copy($attribute))*/
+
+var $entityInfo; $entity; $dataModel; $dataSource; $server : cs:C1710.SchemaNode
 $entityInfo:=ofType("object")\
 .addProperty("name"; ofType("string"); True:C214)\
 .addProperty("label"; ofType("string"))\
@@ -85,8 +112,8 @@ $entityInfo:=ofType("object")\
 .addProperty("embedded"; ofType("boolean"))
 $entity:=ofType("object")\
 .addProperty(""; $entityInfo; True:C214)\
-.addPatternProperty("[0-9]+"; $attributeNamed)\
-.addPatternProperty("^(?!\\s*$).+"; $attribute)  // maybe more restrictive on pattern of relation/alias/calculated
+.addPatternProperty("[0-9]+"; $attributeStorage)\
+.addPatternProperty($attributeNamePattern; oneOf($attributeRelatedEntity; $attributeRelatedEntities; $attributeCalculated; $attributeAlias))
 
 $dataModel:=ofType("object")\
 .addPatternProperty("[0-9]+"; $entity)\

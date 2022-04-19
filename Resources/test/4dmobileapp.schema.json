@@ -134,30 +134,20 @@
 						"[0-9]+": {
 							"type": "object",
 							"properties": {
-								"name": {
-									"type": "string"
-								},
-								"fieldNumber": {
-									"type": "integer"
-								},
 								"label": {
 									"type": "string"
 								},
 								"shortLabel": {
 									"type": "string"
 								},
+								"fieldNumber": {
+									"type": "integer"
+								},
 								"kind": {
 									"type": "string",
 									"enum": [
-										"storage",
-										"relatedEntity",
-										"relatedEntities",
-										"calculated",
-										"alias"
+										"storage"
 									]
-								},
-								"fieldType": {
-									"type": "integer"
 								},
 								"valueType": {
 									"type": "string",
@@ -170,60 +160,131 @@
 										"bool"
 									]
 								},
+								"fieldType": {
+									"type": "integer"
+								},
 								"type": {
 									"type": "integer"
+								},
+								"name": {
+									"type": "string"
 								}
 							},
 							"required": [
-								"kind",
+								"valueType",
+								"fieldType",
+								"type",
 								"name"
 							]
 						},
-						"^(?!\\s*$).+": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string"
-								},
-								"fieldNumber": {
-									"type": "integer"
-								},
-								"label": {
-									"type": "string"
-								},
-								"shortLabel": {
-									"type": "string"
-								},
-								"kind": {
-									"type": "string",
-									"enum": [
-										"storage",
-										"relatedEntity",
-										"relatedEntities",
-										"calculated",
-										"alias"
+						"[A-Za-z_][A-Za-z\\d_]*": {
+							"oneOf": [
+								{
+									"type": "object",
+									"properties": {
+										"label": {
+											"type": "string"
+										},
+										"shortLabel": {
+											"type": "string"
+										},
+										"kind": {
+											"type": "string",
+											"enum": [
+												"relatedEntity"
+											]
+										},
+										"relatedDataClass": {
+											"type": "string"
+										},
+										"inverseName": {
+											"type": "string"
+										},
+										"relatedTableNumber": {
+											"type": "integer"
+										}
+									},
+									"required": [
+										"relatedDataClass",
+										"inverseName",
+										"relatedTableNumber"
 									]
 								},
-								"fieldType": {
-									"type": "integer"
-								},
-								"valueType": {
-									"type": "string",
-									"enum": [
-										"number",
-										"string",
-										"date",
-										"image",
-										"object",
-										"bool"
+								{
+									"type": "object",
+									"properties": {
+										"label": {
+											"type": "string"
+										},
+										"shortLabel": {
+											"type": "string"
+										},
+										"kind": {
+											"type": "string",
+											"enum": [
+												"relatedEntities"
+											]
+										},
+										"relatedDataClass": {
+											"type": "string"
+										},
+										"inverseName": {
+											"type": "string"
+										},
+										"relatedTableNumber": {
+											"type": "integer"
+										},
+										"isToMany": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"relatedDataClass",
+										"inverseName",
+										"relatedTableNumber",
+										"isToMany"
 									]
 								},
-								"type": {
-									"type": "integer"
+								{
+									"type": "object",
+									"properties": {
+										"label": {
+											"type": "string"
+										},
+										"shortLabel": {
+											"type": "string"
+										},
+										"kind": {
+											"type": "string",
+											"enum": [
+												"calculated"
+											]
+										}
+									}
+								},
+								{
+									"type": "object",
+									"properties": {
+										"label": {
+											"type": "string"
+										},
+										"shortLabel": {
+											"type": "string"
+										},
+										"kind": {
+											"type": "string",
+											"enum": [
+												"alias"
+											]
+										},
+										"path": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"path"
+									]
 								}
-							},
-							"required": [
-								"kind"
 							]
 						}
 					}
