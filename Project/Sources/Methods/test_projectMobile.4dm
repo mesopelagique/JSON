@@ -182,11 +182,14 @@ $detail:=ofType("object")\
 $schema.addProperty("detail"; $detail; False:C215)
 
 // Actions
+var $actionPreset : Collection
+$actionPreset:=New collection:C1472("sort"; "edit"; "add"; "delete"; "share")
 var $actionParameter; $action; $actions : cs:C1710.SchemaNode
 $actionParameter:=ofType("object")\
 .addProperty("name"; ofType("string"); True:C214)\
 .addProperty("label"; ofType("string"))\
 .addProperty("shortLabel"; ofType("string"))\
+.addProperty("preset"; ofType("string").setEnum($actionPreset))\
 .addProperty("type"; ofType("string"); True:C214)
 
 var $actionScopes : Collection
