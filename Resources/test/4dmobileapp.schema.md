@@ -140,9 +140,37 @@ on ouvre l'interface d'une relation N>1
  
 ### alias scalaire sous relation N>1
 
+~~pas clicable actuellement main 278715~~
+
+#### avec path simple sans .
+
+```json
+	"dataModel": {
+	"7": {
+			"manager": {
+				"kind": "relatedEntity",
+				"relatedDataClass": "Employes",
+				"relatedTableNumber": 6,
+				"inverseName": "serviceManaged",
+				"aka_Nom": {
+					"kind": "alias",
+					"fieldType": 2,
+					"valueType": 10,
+					"path": "Name",
+					"label": "Aka nom",
+					"shortLabel": "Aka nom"
+				}
+			}
+```
+
+
+#### avec path simple avec .
+
 ```diff
 - pas clicable actuellement main 278715
 ```
+
+
 
 ### relation 1>N sour relation N>1
 
