@@ -164,13 +164,32 @@ on ouvre l'interface d'une relation N>1
 ```
 
 
-#### avec path simple avec .
+#### avec path simple avec . (change rien)
 
-```diff
-- pas clicable actuellement main 278715
+```json
+	"6": {
+			"service": {
+				"kind": "relatedEntity",
+				"relatedDataClass": "Service",
+				"relatedTableNumber": 7,
+				"inverseName": "employees",
+				"aka_ManagerName": {
+					"kind": "alias",
+					"fieldType": 2,
+					"valueType": 10,
+					"path": "manager.Name",
+					"label": "Aka Manager Name",
+					"shortLabel": "Aka Manage"
+				},
+				"aka_BigBossName": {
+					"kind": "alias",
+					"fieldType": 2,
+					"valueType": 10,
+					"path": "manager.manager.Name",
+					"label": "Aka big Boss Name",
+					"shortLabel": "Aka big Bo"
+				},
 ```
-
-
 
 ### relation 1>N sour relation N>1
 
