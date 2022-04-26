@@ -224,11 +224,10 @@ on ouvre l'interface d'une relation N>1
 
 ### relation N>1 sour relation N>1
 
-```diff
-- ne devrait pas être dispo , une relation N>1 marche que si on peut cliquer et prendre les champs dedans actuellement
-- main 278715
-```
+~~ne devrait pas être dispo , une relation N>1 marche que si on peut cliquer et prendre les champs dedans actuellement~~
+~~main 278715~~
 
+pas dispo, je pense (eric) que c'était comme ca auparavant
 
 ### alias scalaire sous une relation N>1
 
