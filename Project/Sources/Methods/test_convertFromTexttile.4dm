@@ -37,17 +37,23 @@ For each ($line; $lines)
 	End for each 
 	$name:=$trim.call(Null:C1517; $name)
 	
-	For each ($part; $parts; $index) Until (Length:C16($type)>0)
-		$type:=$part
-	End for each 
-	
-	$type:=$types[$trim.call(Null:C1517; $type)]
-	$node:=ofType($type)
-	
 	If ($index<$currentIndex)
 		$currents.pop()
 	End if 
 	$currentIndex:=$index
+	
+	For each ($part; $parts; $index) Until (Length:C16($type)>0)
+		$type:=$part
+		$index+=1
+	End for each 
+	
+	$comment:=""
+	For each ($part; $parts; $index)
+		$comment+=$part
+	End for each 
+	
+	$type:=$types[$trim.call(Null:C1517; $type)]
+	$node:=ofType($type).setComment($comment)
 	
 	$currents[$currents.length-1].addProperty($name; $node)
 	

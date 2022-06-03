@@ -3,85 +3,110 @@
 	"type": "object",
 	"properties": {
 		"id": {
-			"type": "string"
+			"type": "string",
+			"$comment": "Session UUID"
 		},
 		"info": {
 			"type": "object",
+			"$comment": "Session info",
 			"properties": {
 				"ip": {
-					"type": "string"
+					"type": "string",
+					"$comment": "Client IP address"
 				},
 				"mobile": {
 					"type": "object",
+					"$comment": "Information about the mobile user",
 					"properties": {
 						"language": {
 							"type": "object",
+							"$comment": "Language settings of the user device",
 							"properties": {
 								"id": {
-									"type": "string"
+									"type": "string",
+									"$comment": "User device current language id"
 								},
 								"code": {
-									"type": "string"
+									"type": "string",
+									"$comment": "User device current language code"
 								},
 								"region": {
-									"type": "string"
+									"type": "string",
+									"$comment": "User device current language region"
 								}
 							}
 						},
 						"email": {
-							"type": "string"
+							"type": "string",
+							"$comment": "User email. Not mandatory, can be empty for guest access"
 						},
 						"status": {
-							"type": "string"
+							"type": "string",
+							"$comment": "Session status. Accepted or pending "
 						},
 						"token": {
-							"type": "string"
+							"type": "string",
+							"$comment": "User token"
 						},
 						"parameters": {
 							"type": "object",
+							"$comment": "Any additional information that could be added by the mobile app native code for custom use",
 							"properties": {
 								"userInfo": {
 									"type": "object",
+									"$comment": "Additional information to base a filter query on (added by 4D code in `On Mobile App Authentication`)",
 									"properties": {
 										"application": {
 											"type": "object",
+											"$comment": "Information about the mobile application",
 											"properties": {
 												"id": {
-													"type": "string"
+													"type": "string",
+													"$comment": "Mobile application id"
 												},
 												"name": {
-													"type": "string"
+													"type": "string",
+													"$comment": "Mobile application name"
 												},
 												"version": {
-													"type": "string"
+													"type": "string",
+													"$comment": "Mobile application version"
 												}
 											}
 										},
 										"team": {
 											"type": "object",
+											"$comment": "Apple Developer Team information",
 											"properties": {
 												"id": {
-													"type": "string"
+													"type": "string",
+													"$comment": "Team id"
 												}
 											}
 										},
 										"device": {
 											"type": "object",
+											"$comment": "Information about the mobile device",
 											"properties": {
 												"description": {
-													"type": "string"
+													"type": "string",
+													"$comment": "Description of the device"
 												},
 												"version": {
-													"type": "string"
+													"type": "string",
+													"$comment": "System version of the device"
 												},
 												"id": {
-													"type": "string"
+													"type": "string",
+													"$comment": "Generated unique device id"
 												},
 												"simulator": {
-													"type": "boolean"
+													"type": "boolean",
+													"$comment": "True if the device is a simulator"
 												},
 												"os": {
-													"type": "string"
+													"type": "string",
+													"$comment": "User device OS"
 												}
 											}
 										}
