@@ -20,7 +20,8 @@
 	},
 	"test": {
 		"methods": [
-			"test_projectMobile"
+			"test_projectMobile",
+			"test_sessionInfo"
 		]
 	},
 	"trash": {}
