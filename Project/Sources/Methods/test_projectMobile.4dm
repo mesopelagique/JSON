@@ -12,6 +12,12 @@ $features:=New object:C1471("launchActionFromTabBar"; True:C214)
 var $schema : cs:C1710.Schema
 $schema:=cs:C1710.Schema.new()
 
+
+var $iOSFieldNamePattern : Text
+//$iOSTableNamePattern:="[a-zA-Z][a-zA-Z]*"  // XXX add other character allowed (_ ? number after first place etc..?)
+$iOSFieldNamePattern:="[a-z][a-zA-Z]*"  // XXX add other character allowed (_ ? number after first place etc..?)
+
+
 // App infos
 
 var $target; $targets; $info; $product; $organization; $developer : cs:C1710.SchemaNode
@@ -190,7 +196,8 @@ $actionParameter:=ofType("object")\
 .addProperty("label"; ofType("string"))\
 .addProperty("shortLabel"; ofType("string"))\
 .addProperty("preset"; ofType("string").setEnum($actionPreset))\
-.addProperty("type"; ofType("string"); True:C214)
+.addProperty("type"; ofType("string"); True:C214)\
+.addProperty("defaultField"; ofType("String"); False:C215).setPattern($iOSFieldNamePattern)
 
 var $actionScopes : Collection
 $actionScopes:=New collection:C1472("table"; "currentRecord")
