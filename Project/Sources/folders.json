@@ -20,6 +20,7 @@
 	},
 	"test": {
 		"methods": [
+			"test_convertFromTexttile",
 			"test_projectMobile",
 			"test_sessionInfo"
 		]
